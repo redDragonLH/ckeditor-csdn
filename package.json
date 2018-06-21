@@ -1,0 +1,15 @@
+{
+  "name": "editor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:ckeditor": "cd ./ckeditors && ./dev/builder/build.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.csdn.net:fe/blog_editor_html.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -7,11 +7,12 @@
 # All "dot directories".
 .*/**
 
-node_modules/**
+node_modules
 build/**
 coverage/**
 
 builded/**
+dev/builder/ckbuilder
 dev/langtool/po/**
 dev/langtool/cklangtool/**
 

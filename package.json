@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:ckeditor": "cd ./ckeditors && ./dev/builder/build.sh"
+    "build:ckeditor": "npm install && ./ckeditors/dev/builder/build.sh",
+    "cd": "cd ckeditors && npm install"
   },
   "repository": {
     "type": "git",
     "url": "git@gitlab.csdn.net:fe/blog_editor_html.git"
   },
+  "devDependencies": {},
   "author": "",
   "license": "ISC"
 }

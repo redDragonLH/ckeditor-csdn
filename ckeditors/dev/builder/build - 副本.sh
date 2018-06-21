@@ -70,21 +70,25 @@ then
 	VERSION="$VERSION DEV"
 fi
 
-java -jar ckbuilder/$CKBUILDER_VERSION/ckbuilder.jar --build ../../ release $JAVA_ARGS --version="$VERSION" --revision="$REVISION" --overwrite
+# 去掉就是原来的位置 $POSITION 后面的 / 也要去掉
+POSITION="../../builded"
+# 原本release后面不带版本号
+
+java -jar ckbuilder/$CKBUILDER_VERSION/ckbuilder.jar --build ../../ $POSITION/release$VERSION $JAVA_ARGS --version="$VERSION" --revision="$REVISION" --overwrite
 
 # Copy and build tests.
 if [[ "$ARGS" == *\ \-t\ * ]]; then
 	echo ""
 	echo "Copying tests..."
 
-	cp -r ../../tests release/ckeditor/tests
-	cp -r ../../package.json release/ckeditor/package.json
-	cp -r ../../bender.js release/ckeditor/bender.js
+	cp -r ../../tests $POSITION/release$VERSION/ckeditor/tests
+	cp -r ../../package.json $POSITION/release$VERSION/ckeditor/package.json
+	cp -r ../../bender.js $POSITION/release$VERSION/ckeditor/bender.js
 
 	echo ""
 	echo "Installing tests..."
 
-	(cd release/ckeditor &&	npm install && bender init)
+	(cd $POSITION/release$VERSION/ckeditor &&	npm install && bender init)
 fi
 
 echo ""

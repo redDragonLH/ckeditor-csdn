@@ -13,6 +13,7 @@ coverage/**
 
 builded/**
 dev/builder/release
+dev/builder/builded/**
 dev/builder/ckbuilder
 dev/langtool/po/**
 dev/langtool/cklangtool/**

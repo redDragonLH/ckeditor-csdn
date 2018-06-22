@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:ckeditor": "npm install && npm run cd && ./ckeditors/dev/builder/build.sh",
+    "build": "npm install && npm run cd && ./ckeditors/dev/builder/build.sh",
     "cd": "cd ckeditors && npm install"
   },
   "repository": {

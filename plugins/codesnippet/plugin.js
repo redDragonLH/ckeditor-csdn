@@ -350,7 +350,14 @@
 			upcast: function( el, data ) {
 				if ( el.name != 'pre' )
 					return;
-
+				
+				// if(el.attributes.class.indexOf('has') === -1){
+				// 
+				// 	var code = new CKEDITOR.htmlParser.element( 'code' ); 
+				// 	code.addClass("language-" + el.classes[0])
+				// 	code.setHtml(el.children[0].value.replace(/\n/gm,'\r'))
+				// 	el.children[0] = code;
+				// }
 				var childrenArray = getNonEmptyChildren( el ),
 					code;
 

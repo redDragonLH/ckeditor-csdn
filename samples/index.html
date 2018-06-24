@@ -60,8 +60,41 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 		<div class="grid-container">
 			<div class="grid-width-100">
 				<div id="editor">
-					<h1>Hello world!</h1>
-					<p>I'm an instance of <a href="https://ckeditor.com">CKEditor</a>.</p>
+					<pre class="has"><code class="language-javascript">  cont = encodeURIComponent(CKEDITOR.instances.editor.getData());
+					    //var desc = csdn.val2("txtDesc");
+					    var categories = csdn.val2("hidCategories");
+					    //var flnm = csdn.val2("txtFileName");
+					    var chnl = $('#radChl').val() || 0;
+					    //var comm = $("input[name=radComment]:checked").val();
+					    var leve = 0; // $("#chkHome").attr("checked") ? 1 : 0;
+					    var Description = $('#summaryCon').val();
+					    var tag2 = $('#hidTags').val(); // encodeURIComponent(function () { var s = []; $('#d_tag2 span').each(function () { s.push(this.innerHTML); }); return s.join(','); }());
+					    //GetResult();
+					    var data = "titl=" + titl + "&amp;typ=" + type + "&amp;cont=" + cont; // + "&amp;desc=" + desc;
+					    data += "&amp;categories=" + categories + "&amp;chnl=" + chnl + "&amp;level=" + leve; //"&amp;tags=" + tags + 
+					    data += "&amp;tag2=" + tag2;
+
+					    data += "&amp;artid=" + artId;
+					    data += "&amp;private=" + $('#chkIsHasNotify').is(':checked');
+					    //data += "&amp;checkcode=" + $("#txtCheckCode").val();
+
+					    //data += "&amp;userinfo1=" + $("#userinfo2").val();
+					    data += "&amp;Description=" + encodeURIComponent(Description);
+
+					   data['Description'] = encodeURIComponent(Description);</code></pre><p id="main-toc"><strong>目录</strong></p><p><a href="#%E4%B8%BA%E5%8E%BB" rel="nofollow">为去</a></p><p><a href="#%E5%B8%A6%E6%88%91%E5%8E%BB%E6%88%91%E5%8E%BB" rel="nofollow">带我去我去</a></p><p><a href="#%E4%BA%8C%E4%BA%94%E6%83%B9%E4%BA%BA%E4%BA%8C%E4%BA%94" rel="nofollow">二五惹人二五</a></p><hr id="hr-toc" /><h1>为去</h1><h2 id="%E5%B8%A6%E6%88%91%E5%8E%BB%E6%88%91%E5%8E%BB">带我去我去</h2><h3 id="%E4%BA%8C%E4%BA%94%E6%83%B9%E4%BA%BA%E4%BA%8C%E4%BA%94">二五惹人二五</h3><p><strong>目录</strong></p><p><a href="#%E4%B8%BA%E5%8E%BB" rel="nofollow">为去</a></p><p><a href="#%E5%B8%A6%E6%88%91%E5%8E%BB%E6%88%91%E5%8E%BB" rel="nofollow">带我去我去</a></p><p><a href="#%E4%BA%8C%E4%BA%94%E6%83%B9%E4%BA%BA%E4%BA%8C%E4%BA%94" rel="nofollow">二五惹人二五</a></p><hr /><table border="1" cellpadding="1" cellspacing="1"><tbody><tr><td> </td><td> </td></tr><tr><td> </td><td> </td></tr><tr><td> </td><td> </td></tr></tbody></table><p> </p><pre class="has"><code class="language-javascript">var path = this</code></pre><p> </p><pre class="has"><code class="language-javascript">function m_out_m() {
+					    __mm_over = false;
+					    hideMedalInfo();
+					}</code></pre><p> </p> 
+					<pre name="code" class="html">&lt;footer class="footer-a grid-container"&gt;
+	&lt;div class="grid-container"&gt;
+		&lt;p class="grid-width-100"&gt;
+			CKEditor – The text editor for the Internet – &lt;a class="samples" href="https://ckeditor.com/"&gt;https://ckeditor.com&lt;/a&gt;
+		&lt;/p&gt;
+		&lt;p class="grid-width-100" id="copy"&gt;
+			Copyright &amp;copy; 2003-2018, &lt;a class="samples" href="https://cksource.com/"&gt;CKSource&lt;/a&gt; – Frederico Knabben. All rights reserved.
+		&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/footer&gt;</pre>
 				</div>
 			</div>
 		</div>
@@ -123,6 +156,14 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 	</div>
 </footer>
 <script>
+// var preArr =  Array.prototype.slice.call(document.getElementById('editor').getElementsByTagName('pre'));
+// preArr.forEach(function(dom){
+// 	if(dom.childNodes[0].nodeType == 3){
+// 		console.log(dom.className)
+// 		dom.innerHTML='<code class="language-' + dom.className + '" >' + dom.innerHTML + '</code>';
+// 	}
+// 
+// })
 	initSample();
 	
 </script>

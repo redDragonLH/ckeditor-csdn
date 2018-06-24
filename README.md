@@ -1,79 +1,55 @@
-# CKEditor 4 - The best browser-based WYSIWYG editor
+# CSDN_blog_editor
+[ckREADME](./doc/ckeditorREADME.md)
 
-[![devDependencies Status](https://david-dm.org/ckeditor/ckeditor-dev/dev-status.svg)](https://david-dm.org/ckeditor/ckeditor-dev?type=dev)
+[csdn修改文档](http://confluence.csdn.net/pages/viewpage.action?pageId=19601246)
 
-[csdn修改文档](./CSDNModify.md)
+## 开发环境
+本项目代理到 `csdnimg.cn/release/` 下，不过在 blog项目 `config.php` 下做了灵活配置，开发和测试可以把在`config.php` url配置成本地url，确保开发和测试顺利。
+## 上线
+上线时会按照 package.json 内的版本号生成新的上线版本，所以每次上线需修改 package.json 的版本号，然后使用时使用相应的链接,
 
-This repository contains the development version of CKEditor 4.
+上线流程
+* 修改 package.json 的版本号（[必读](./doc/SemVer)）
+* 打tag
+  * 把分支合并到`master`并`push`
+  * 获取修改内容的 commit `git log`
+  * `git tag -a v确定的版本号（版本号最好和package.json 保持一致） 得到的 commit`
+  * push 版本号`git push origin v版本号`
 
-**Attention:** The code in this repository should be used locally and for
-development purposes only. We do not recommend using it in production environment
-because the user experience will be very limited. For that purpose, you should
-either build the editor (see below) or use an official release available on the
-[CKEditor website](https://ckeditor.com/ckeditor-4/).
+## ckbuilder
+打包器是一个单独项目，
+[ckbuilder开源项目](https://github.com/ckeditor/ckbuilder)，
+node 编写，编译成java
 
-## Code Installation
+**因为是 ckeditor 是上线时构建，所以如要使用已修改的 ckbuilder 需把已修改的 ckbuilder 项目放到gitlab或开源项目,并修改 ckeditor `./dev/builder/build.sh`文件的下载链接**
 
-There is no special installation procedure to install the development code.
-Simply clone it to any local directory and you are set.
+### java
+ckeditor 使用 Java 作为打包语言，测试打包后的ck或者修改ckbuilder， 需要安装 java 环境
 
-## Available Branches
 
-This repository contains the following branches:
+#### 下载 
 
-  - **master** &ndash; Development of the upcoming minor release.
-  - **major** &ndash; Development of the upcoming major release.
-  - **stable** &ndash; Latest stable release tag point (non-beta).
-  - **latest** &ndash; Latest release tag point (including betas).
-  - **release/A.B.x** (e.g. 4.0.x, 4.1.x) &ndash; Release freeze, tests and tagging.
-    Hotfixing.
+[Oracle Technology Network > Java > Java SE > Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html)  点击 download 按钮跳转页面 选择 mac 对应的安装包下载
 
-Note that both **master** and **major** are under heavy development. Their
-code did not pass the release testing phase, though, so it may be unstable.
+### 配置环境变量
+**ckbuilder 也需要java 打包环境**
 
-Additionally, all releases have their respective tags in the following form: 4.4.0,
-4.4.1, etc.
+*运如果行 `java -version` 出来版本信息就可以不手动配置*
 
-## Samples
+（1）确认本机所使用的shell是哪个：zsh/bash
+在命令行中输入`echo $SHELL` ，
+如果输出`/bin/bash`则为bash，
+如果输出结果为 `/bin/zsh`则为zsh。
 
-The `samples/` folder contains some examples that can be used to test your
-installation. Visit [CKEditor 4 SDK](https://sdk.ckeditor.com/) for plenty of samples
-showcasing numerous editor features, with source code readily available to view, copy
-and use in your own solution.
+（2）根据上面不同的结果修改不同的shell配置文件
+若为bash，则打开 `~/.bash_profile`，若为zsh打开`~/.zshrc`。
 
-## Code Structure
+在相应的文件末尾添加以下内容，并保存，
 
-The development code contains the following main elements:
+    export JAVA_HOME=$(/usr/libexec/java_home)
+    
+在~/目录，命令行执行`source`命令，`source .bash_profile` 或 `source .zshrc`。
 
-  - Main coding folders:
-    - `core/` &ndash; The core API of CKEditor 4. Alone, it does nothing, but
-    it provides the entire JavaScript API that makes the magic happen.
-    - `plugins/` &ndash; Contains most of the plugins maintained by the CKEditor 4 core team.
-    - `skin/` &ndash; Contains the official default skin of CKEditor 4.
-    - `dev/` &ndash; Contains some developer tools.
-    - `tests/` &ndash; Contains the CKEditor 4 tests suite.
+执行`java -version`出现JDK的版本信息即已配置成功。
 
-## Building a Release
 
-A release-optimized version of the development code can be easily created
-locally. The `dev/builder/build.sh` script can be used for that purpose:
-
-	> ./dev/builder/build.sh
-
-A "release ready" working copy of your development code will be built in the new
-`dev/builder/release/` folder. An Internet connection is necessary to run the
-builder, for its first time at least.
-
-## Testing Environment
-
-Read more on how to set up the environment and execute tests in the [CKEditor 4 Testing Environment](https://docs.ckeditor.com/ckeditor4/docs/#!/guide/dev_tests) guide.
-
-## Reporting Issues
-
-Please use the [CKEditor 4 GitHub issue page](https://github.com/ckeditor/ckeditor-dev/issues) to report bugs and feature requests.
-
-## License
-
-Copyright (c) 2003-2018, CKSource - Frederico Knabben. All rights reserved.
-
-For licensing, see LICENSE.md or [https://ckeditor.com/legal/ckeditor-oss-license](https://ckeditor.com/legal/ckeditor-oss-license)

@@ -351,13 +351,26 @@
 				if ( el.name != 'pre' )
 					return;
 				
-				// if(el.attributes.class.indexOf('has') === -1){
-				// 
-				// 	var code = new CKEDITOR.htmlParser.element( 'code' ); 
-				// 	code.addClass("language-" + el.classes[0])
-				// 	code.setHtml(el.children[0].value.replace(/\n/gm,'\r'))
-				// 	el.children[0] = code;
-				// }
+				// 兼容旧代码
+				var isOldCode = false; // 判断是否为旧代码格式
+				for (var i = 0; i < el.children.length; i++) {
+					// 子节点有code就略过
+					isOldCode =	el.children[i].name == 'code'? false: true;
+					if(!isOldCode){
+						break;
+					}
+				}
+				
+				if(el.attributes.class.indexOf('has') === -1 && isOldCode){
+					var code = new CKEDITOR.htmlParser.element( 'code' ); // 生成code节点
+					var text = new CKEDITOR.htmlParser.text(el.getHtml()) // 生成内部代码段节点
+					code.addClass("language-" + el.classes[0])
+					code.children[0] = text
+					el.children[0] = code;
+					el.attributes.class = 'has';
+				}
+				// 兼容旧代码end
+				
 				var childrenArray = getNonEmptyChildren( el ),
 					code;
 

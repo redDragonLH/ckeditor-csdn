@@ -9,7 +9,7 @@
 上线时会按照 package.json 内的版本号生成新的上线版本，所以每次上线需修改 package.json 的版本号，然后使用时使用相应的链接,
 
 上线流程
-* 修改 package.json 的版本号（[必读](./doc/SemVer)）
+* 修改 package.json 的版本号（[必读](./doc/SemVer.md)）
 * 打tag
   * 把分支合并到`master`并`push`
   * 获取修改内容的 commit `git log`

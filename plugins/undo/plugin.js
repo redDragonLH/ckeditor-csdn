@@ -13,8 +13,8 @@
 ( function() {
 	var keystrokes = [
 			CKEDITOR.CTRL + 90 /*Z*/,
-			CKEDITOR.CTRL + 89 /*Y*/,
-			CKEDITOR.CTRL + CKEDITOR.SHIFT + 90 /*Z*/
+			CKEDITOR.CTRL + CKEDITOR.SHIFT + 90 /*Z*/,
+			CKEDITOR.CTRL + 89 /*Y*/
 		],
 		backspaceOrDelete = { 8: 1, 46: 1 };
 
@@ -51,8 +51,8 @@
 
 			editor.setKeystroke( [
 				[ keystrokes[ 0 ], 'undo' ],
-				[ keystrokes[ 1 ], 'redo' ],
-				[ keystrokes[ 2 ], 'redo' ]
+				[ keystrokes[ 2 ], 'redo' ],
+				[ keystrokes[ 1 ], 'redo' ]
 			] );
 
 			undoManager.onChange = function() {

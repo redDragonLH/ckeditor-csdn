@@ -18,15 +18,12 @@ CKEDITOR.editorConfig = function( config ) {
 			{ name: 'forms', groups: [ 'forms' ] },
 			{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
 			{ name: 'links', groups: [ 'links' ] },
-			{ name: 'styles', groups: [ 'styles' ] },
-			{ name: 'colors', groups: [ 'colors' ] },
-			{ name: 'tools', groups: [ 'tools' ] },
-			{ name: 'others', groups: [ 'others' ] },
-			{ name: 'about', groups: [ 'about' ] }
+			{ name: 'undo', groups: [ 'undo' ] },
+			{ name: 'tools', groups: [ 'tools' ] }
 		];
 	
-		config.removeButtons = 'DocProps,Cut,Copy,Paste,PasteText,PasteFromWord,Find,Replace,Subscript,Superscript,Outdent,Indent,SpecialChar,Styles,Html5video,RemoveFormat,Source,Font,FontSize,Emojione';
-
+		config.removeButtons = 'DocProps,Cut,Copy,Paste,PasteText,PasteFromWord,Find,Replace,Subscript,Superscript,Outdent,Indent,SpecialChar,Styles,Html5video,RemoveFormat,Source,Font,FontSize';
+// config.removeButtons= 'Emojione';
 	config.plugins =  'basicstyles,'+
 										'blockquote,'+
 										'dialogui,'+
@@ -70,7 +67,7 @@ CKEDITOR.editorConfig = function( config ) {
 										'table,'+
 										'tabletools,'+
 										'tableselection,'+
-										// 'undo,'+
+										'undo,'+
 										'lineutils,'+
 										'widgetselection,'+
 										'widget,'+
@@ -88,7 +85,7 @@ CKEDITOR.editorConfig = function( config ) {
 										'imagebase,'+
 										'xml,'+
 										'ajax,'+
-										'emojione,'+
+										// 'emojione,'+
 										'image2,'+
 										'eqneditor,'+
 										'font,'+

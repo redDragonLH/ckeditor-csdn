@@ -360,8 +360,8 @@
 						break;
 					}
 				}
-				
-				if(el.attributes.class.indexOf('has') === -1 && isOldCode){
+
+				if(el.attributes.class != undefined && el.attributes.class.indexOf('has') === -1 && isOldCode){
 					var code = new CKEDITOR.htmlParser.element( 'code' ); // 生成code节点
 					var text = new CKEDITOR.htmlParser.text(el.getHtml()) // 生成内部代码段节点
 					code.addClass("language-" + el.classes[0])

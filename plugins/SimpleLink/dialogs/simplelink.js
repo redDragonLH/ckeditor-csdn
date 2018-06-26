@@ -84,9 +84,11 @@
 		onOk: function() {
 			var dialog = this;
 			var anchorElement = this.element;
-			
 			this.commitContent(this.element);
 
+			if(this.element.$.dataset.ckeSavedHref){
+				this.element.$.dataset.ckeSavedHref = this.element.$.href;
+			}
 			if(this.insertMode) {
 				editor.insertElement(this.element);
 			}

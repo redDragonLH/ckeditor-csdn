@@ -22,8 +22,8 @@ CKEDITOR.editorConfig = function( config ) {
 			{ name: 'tools', groups: [ 'tools' ] }
 		];
 	
-		config.removeButtons = 'DocProps,Cut,Copy,Paste,PasteText,PasteFromWord,Find,Replace,Subscript,Superscript,Outdent,Indent,SpecialChar,Styles,Html5video,RemoveFormat,Source,Font,FontSize,Emojione';
-
+		config.removeButtons = 'DocProps,Cut,Copy,Paste,PasteText,PasteFromWord,Find,Replace,Subscript,Superscript,Outdent,Indent,SpecialChar,Styles,Html5video,RemoveFormat,Source,Font,FontSize';
+// config.removeButtons= 'Emojione';
 	config.plugins =  'basicstyles,'+
 										'blockquote,'+
 										'dialogui,'+
@@ -85,7 +85,7 @@ CKEDITOR.editorConfig = function( config ) {
 										'imagebase,'+
 										'xml,'+
 										'ajax,'+
-										'emojione,'+
+										// 'emojione,'+
 										'image2,'+
 										'eqneditor,'+
 										'font,'+

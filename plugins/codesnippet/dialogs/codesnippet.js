@@ -62,6 +62,7 @@
 						{
 							id: 'code',
 							type: 'textarea',
+							className: 'codebox',
 							// label: lang.codeContents,
 							setup: function( widget ) {
 								this.setValue( widget.data.code );
@@ -85,7 +86,24 @@
 						}
 					]
 				}
-			]
+			],
+			onLoad: function(){
+				var codebox = document.getElementsByClassName('codebox')[0].getElementsByTagName('textarea')[0];
+				codebox.addEventListener('keydown',function(e){
+				  if(e.keyCode===9){
+						window.event? window.event.returnValue = false : e.preventDefault(); //阻止默认行为
+						// 谷歌阻止tab默认 这个好使
+				    window.event? window.event.cancelBubble = true : e.stopPropagation(); //停止冒泡
+
+						var position=this.selectionStart+4;//四个空格
+						// '    ' 修改缩进位置
+				    this.value=this.value.substr(0,this.selectionStart) + '    ' + this.value.substr(this.selectionStart);
+				    this.selectionStart=position;
+				    this.selectionEnd=position;
+				    this.focus();
+				  }
+				},false);
+			}
 		};
 	} );
 }() );

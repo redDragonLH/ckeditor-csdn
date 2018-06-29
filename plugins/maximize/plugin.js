@@ -169,6 +169,7 @@
 				element.setStyles({
 					width:'970px',
 					margin: '0 auto',
+					paddingTop: '16px',
 					backgroundColor: '#f3f4f5'
 				})
 				// toolbar 样式

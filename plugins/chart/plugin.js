@@ -364,7 +364,8 @@
 
 					var data = this.data;
 					// Without timeout the chart does not render immediately after inserting into the editing area.
-					setTimeout( function() { renderChart( canvas, data, legend ) }, 0 );
+					// setTimeout( function() { renderChart( canvas, data, legend ) }, 0 );
+					renderChart( canvas, data, legend )
 				},
 
 				// ACF settings. Without allowing elements introduced by this plugin, CKEditor built-in filter would remove it.

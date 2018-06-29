@@ -4,7 +4,9 @@
 [csdn修改文档](http://confluence.csdn.net/pages/viewpage.action?pageId=19601246)
 
 ## 开发环境
-本项目代理到 `csdnimg.cn/release/` 下，不过在 blog项目 `config.php` 下做了灵活配置，开发和测试可以把在`config.php` url配置成本地url，确保开发和测试顺利。
+下载下来后可直接打开 `samples/index.html`查看 ，无需任何配置、操作、命令，并且修改实时生效
+
+本项目线上代理到 `csdnimg.cn/release/` 下，不过在 blog项目 `config.php` 下做了灵活配置，开发和测试可以把在`config.php`的 `$config['html_editor']` 配置成本地url，确保开发和测试顺利。
 ## 上线
 上线时会按照 package.json 内的版本号生成新的上线版本，所以每次上线需修改 package.json 的版本号，然后使用时使用相应的链接,
 

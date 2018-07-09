@@ -75,6 +75,7 @@
 						cs: 'C#',
 						css: 'CSS',
 						Delphi: 'Delphi',
+						diff: 'diff',
 						vbnet: 'VB.NET',
 						Go: 'Go',
 						html: 'HTML',

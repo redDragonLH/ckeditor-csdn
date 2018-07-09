@@ -11,10 +11,10 @@
 				'width:970px;margin:44px auto 24px'+
 				'}'+
 				'#txtTitleM{'+
-				'height:50px;width:60%;'+
+				'height:38px;width:85%;'+
 				'border-style:none;'+
 				'background-color:#f3f4f5;'+
-				'font-size:32px;'+
+				'font-size:24px;'+
 				'}'+
 				'#MaximizeHead .btn-outline-danger{'+
 				'float:right;color:#ffffff;'+

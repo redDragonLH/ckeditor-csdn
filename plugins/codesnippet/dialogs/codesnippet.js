@@ -81,7 +81,8 @@
 								'text-align:left;'+
 								'font-size: 14px;'+
 								'color: #CCCCCC;'+
-								'background: #272E39;',
+								'background: #272E39;'+
+								'font-family: Consolas,Inconsolata,Courier,monospace,PingFang SC,Microsoft YaHei,sans-serif;',
 							'class': 'cke_source'
 						}
 					]

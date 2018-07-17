@@ -22,6 +22,7 @@
 		 * @since 4.1
 		 */
 		remove: function() {
+			if(!this.parent) return false; // 没有 this.parent 则不运行
 			var children = this.parent.children,
 				index = CKEDITOR.tools.indexOf( children, this ),
 				previous = this.previous,
@@ -82,6 +83,7 @@
 		 * @param {CKEDITOR.htmlParser.node} node The node that will follow this element.
 		 */
 		insertBefore: function( node ) {
+			if(!node.parent) return false;  // 没有 node.parent 则不运行
 			var children = node.parent.children,
 				index = CKEDITOR.tools.indexOf( children, node );
 
